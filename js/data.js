@@ -140,5 +140,7 @@ const icons = [
 console.log(icons);
 
 function genIcons() {
-
+	icons.forEach((element, index) => {
+		
+	});
 }
