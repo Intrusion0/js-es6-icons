@@ -152,18 +152,17 @@ genIconsDefault();
 contSelect.addEventListener('change', function() {
     contIcons.innerHTML = '';
 
-    const animalIcons = icons.filter((elem) => elem.type === 'animal');
-    const vegetableIcons = icons.filter((elem) => elem.type === 'vegetable');
-    const userIcons = icons.filter((elem) => elem.type === 'user');
-
     switch (this.value) {
         case 'animal':
+			const animalIcons = icons.filter((elem) => elem.type === 'animal');
             animalIcons.forEach((element) => genIcons(element.family, element.prefix, element.name, element.color, element.name));
         break;
 		case 'vegetable':
+			const vegetableIcons = icons.filter((elem) => elem.type === 'vegetable');
             vegetableIcons.forEach((element, index) => genIcons(element.family, element.prefix, element.name, element.color, element.name));
         break;
 		case 'user':
+			const userIcons = icons.filter((elem) => elem.type === 'user');
             userIcons.forEach((element, index) => genIcons(element.family, element.prefix, element.name, element.color, element.name));
         break;
         case 'All':
