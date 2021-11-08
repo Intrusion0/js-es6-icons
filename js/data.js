@@ -8,17 +8,16 @@ Ciascuna icona ha una proprietà “color”: utilizzare questa proprietà per v
 
 /* Milestone 1
 
-1. Creo una funzione che crea le icons => function genIcons(){};
-2. Creo un ciclo che scorre all'interno dell'array => foreach
-	2.1 Creo una variabile e utilizzo il destructuring per prendere tutte le chiavi degli object e salvarli => let {x,y,a,b,c} = icons;
-	2.2 Utilizzo .innerHTML per stampare le card delle icone => x.innerHTML += ``;
-		2.2.1 Sostituisco la classe originale con gli elementi degli object => <i class="{x,y,a,ecc..}"></i>
+--DONE	1. Creo una funzione che crea le icons => function genIcons(){};
+--DONE	2. Creo un ciclo che scorre all'interno dell'array => foreach
+	--DONE	2.2 Utilizzo .innerHTML per stampare le card delle icone => x.innerHTML += ``;
+		--DONE	2.2.1 Sostituisco la classe originale con gli elementi degli object => <i class="{x,y,a,ecc..}"></i>
 
 */
 
 /* Milestone 2
 
-1.
+1. 
 
 */
 
@@ -139,8 +138,12 @@ const icons = [
 
 console.log(icons);
 
+genIcons();
+
 function genIcons() {
+	const contIcons = document.getElementById('icon');
+
 	icons.forEach((element, index) => {
-		
+		contIcons.innerHTML += `<i class="${element.family} ${element.prefix}${element.name} ${element.color}"></i>`
 	});
 }
