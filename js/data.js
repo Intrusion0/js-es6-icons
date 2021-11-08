@@ -15,11 +15,7 @@ Ciascuna icona ha una proprietà “color”: utilizzare questa proprietà per v
 
 */
 
-/* Milestone 2
-
-1. 
-
-*/
+/* Milestone 2 --DONE	*/
 
 const icons = [
 	{
@@ -141,9 +137,15 @@ console.log(icons);
 genIcons();
 
 function genIcons() {
-	const contIcons = document.getElementById('icon');
+	const contIcons = document.querySelector('.row.row-cols-5');
 
 	icons.forEach((element, index) => {
-		contIcons.innerHTML += `<i class="${element.family} ${element.prefix}${element.name} ${element.color}"></i>`
+		contIcons.innerHTML += `
+		<div class="col">
+			<div class="ms-container-icons">
+				<i class="${element.family} ${element.prefix}${element.name} ${element.color}"></i>
+				<span>${element.name}</span>
+			</div>
+		</div>`
 	});
 }
