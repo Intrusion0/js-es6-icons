@@ -166,7 +166,7 @@ contSelect.addEventListener('change', function() {
             userIcons.forEach((element, index) => genIcons(element.family, element.prefix, element.name, element.color, element.name));
         break;
         case 'All':
-            icons.forEach((element, index) => genIcons(element.family, element.prefix, element.name, element.color, element.name));
+            genIconsDefault();
         break;
 
     }
