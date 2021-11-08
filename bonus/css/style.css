@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
+/* General rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.fas {
+    font-size: 40px;
+}
+
+/* Intestazione */
+header {
+    width: 100%;
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+
+.logo-text {
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+
+.logo-text a {
+    text-decoration: none;
+    color: #29b1dd;
+    font-size: 35px;
+}
+
+/* Parte centrale */
+
+/* Sezione filter */
+#filter {
+    background-color: #29b1dd;
+}
+
+.ms-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.form-select.ms-select {
+    margin-left: 20px;
+    width: 7%;
+}
+
+/* Sezione icons */
+#icon {
+    background-color: #dddddd;
+}
+
+.ms-container-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    background-color: #f5f5f5;
+    border-radius: 15px;
+    margin: 40px 30px;
+    border-bottom: 1px solid #a5a5a5;
+    border-right: 1px solid #a5a5a5;
+}
+
+.ms-container-icons span {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.blue {
+    color: blue;
+}
+
+.green {
+    color: green;
+}
+
+.orange {
+    color: orange;
+}
