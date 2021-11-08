@@ -23,9 +23,9 @@ Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi d
 
 /* Milestone 3
 
-1. Aggiungo un evento quando l'utente seleziona un tipo di icona => x.addEventListener
-    1.1 Utilizzo un filtro per creare un nuovo array con le varie modifiche => icons.filter(element)
-    1.2 Se l'utente seleziona un tipo di icone, stamperò in HTML quelle nell'array nuovo che comprenderanno il tipo selezionato = x.innerHTML += ``;
+--DONE	1. Aggiungo un evento quando l'utente seleziona un tipo di icona => x.addEventListener
+    --DONE	1.1 Utilizzo un filtro per creare un nuovo array con le varie modifiche => icons.filter(element)
+    --DONE	1.2 Se l'utente seleziona un tipo di icone, stamperò in HTML quelle nell'array nuovo che comprenderanno il tipo selezionato = x.innerHTML += ``;
 
 */
 
@@ -144,24 +144,52 @@ const icons = [
 	}
 ];
 
+const contIcons = document.querySelector('.row.row-cols-5');
 const contSelect = document.querySelector('.ms-select');
 
-genIcons();
-
-function genIcons() {
-	const contIcons = document.querySelector('.row.row-cols-5');
-
-	icons.forEach((element, index) => {
-		contIcons.innerHTML += `
-		<div class="col">
-			<div class="ms-container-icons">
-				<i class="${element.family} ${element.prefix}${element.name} ${element.color}"></i>
-				<span>${element.name}</span>
-			</div>
-		</div>`
-	});
-}
+genIconsDefault();
 
 contSelect.addEventListener('change', function() {
-    
+    contIcons.innerHTML = '';
+
+    const animalIcons = icons.filter((elem) => elem.type === 'animal');
+    const vegetableIcons = icons.filter((elem) => elem.type === 'vegetable');
+    const userIcons = icons.filter((elem) => elem.type === 'user');
+
+    switch (this.value) {
+        case 'animal':
+            animalIcons.forEach((element) => genIcons(element.family, element.prefix, element.name, element.color, element.name));
+        break;
+		case 'vegetable':
+            vegetableIcons.forEach((element, index) => genIcons(element.family, element.prefix, element.name, element.color, element.name));
+        break;
+		case 'user':
+            userIcons.forEach((element, index) => genIcons(element.family, element.prefix, element.name, element.color, element.name));
+        break;
+        case 'All':
+            icons.forEach((element, index) => genIcons(element.family, element.prefix, element.name, element.color, element.name));
+        break;
+
+    }
 });
+
+// FUNZIONI
+
+// Icons di default
+function genIconsDefault() {
+
+	icons.forEach((element, index) => genIcons(element.family, element.prefix, element.name, element.color, element.name));
+
+}
+
+// Funzione genera Icons
+function genIcons(family, prefix, name, color, name_2) {
+    contIcons.innerHTML += `
+		<div class="col">
+			<div class="ms-container-icons">
+				<i class="${family} ${prefix}${name} ${color}"></i>
+				<span>${name_2}</span>
+			</div>
+		</div>`
+    return contIcons;
+}
